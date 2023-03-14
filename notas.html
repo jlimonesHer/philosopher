@@ -8,6 +8,7 @@
 	<title>Notas de philosopher</title>
 </head>
 <body>
+	<h1>Funciones philosopher</h1>
 	<table>
 		<th class="nombre">Funciones autorizadas</th>
 		<th class="descrip">Descripcion</th>
@@ -65,6 +66,49 @@
 			<td class="prototipo">int pthread_mutex_destroy(pthread_mutex_t *mutex); pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;</td>
 			<td class="libreria">pthread.h</td>
 		</tr>
+		<tr>
+			<td class="nombre">pthread_mutex_lock</td>
+			<td class="descrip">Permite solicitar acceso al mutex, el hilo se bloquea hasta su obtención</td>
+			<td class="prototipo">int  pthread_mutex_lock(pthread_mutex_t * mutex);</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">pthread_mutex_unlock</td>
+			<td class="descrip">Permite liberar un mutex.</td>
+			<td class="prototipo">int  pthread_mutex_unlock(pthread_mutex_t * mutex);</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
 	</table>
+	<div>
+		<p>
+			Los hilos son una forma de ejecucion sincronizada, es decir, 1 proceso que se bifurca en uno o mas hijos y que
+			se ejecutan simultaneamente.
+		</p>
+		<h2>Funcion pthread_create</h2>
+		<p>
+			1- &proceso1 = hilo creado por pthread_t <br>
+			2- NULL = atributos del hilo<br>
+			3- &procesos_separados = rutina que se ejecutara cuando comience el hilo <br>
+			4- "hola" = argumentos de entrada de la rutina<br>
+			<b>return   la funcion si tiene exito devuelve 0</b><br>
+		</p>
+	</div>
+	<div>
+		<h2>Forma de crear hilos y unirlos</h2>
+		<p>
+			int	main(int argc, char **argv)<br>
+			{<br>
+				pthread_t	proceso1;<br>
+				pthread_t	proceso2;<br>
+				int 		value;<br>
+
+				pthread_create(&proceso1, NULL, &thread_routine, &value);<br>
+				pthread_create(&proceso2, NULL, &thread_routine, &value);<br>
+				pthread_join(proceso1, NULL);<br>
+				pthread_join(proceso2, NULL);<br>
+				return (0);<br>
+			}<br>
+		</p>
+	</div>
 </body>
 </html>

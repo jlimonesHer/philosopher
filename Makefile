@@ -3,17 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/03/12 10:55:25 by jlimones         ###   ########.fr        #
+#    Updated: 2023/03/14 17:00:55 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
-SRC = 	src/philo.c \
+SRC = 	src/main.c \
+	 	src/parse_args.c \
+	 	src/parse_utils.c \
+	 	src/parse_utils2.c \
 
 AUTHOR = jlimones
 DATE = 11/03/2023
