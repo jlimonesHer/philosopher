@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Notas de philosopher</title>
+</head>
+<body>
+	<table>
+		<th class="nombre">Funciones autorizadas</th>
+		<th class="descrip">Descripcion</th>
+		<th class="prototipo">Prototipo</th>
+		<th class="nombre">libreria</th>
+		<tr>
+			<td class="nombre">memset</td>
+			<td class="descrip">La función memset() rellena los primeros n bytes del área de memoria apuntada por s con el byte constante c</td>
+			<td class="prototipo">void *memset(void *s, int c, size_t n);</td>
+			<td class="libreria">string.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">usleep</td>
+			<td class="descrip">       La función usleep() suspende la ejecución del proceso llamante durante usec microsegundos.
+				La pausa puede prolongarse ligeramente por cualquier actividad en  el  sistema  o  por  el
+				tiempo gastado procesando la llamada.</td>
+			<td class="prototipo">int usleep(unsigned long usec);</td>
+			<td class="libreria">unistd.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">gettimeofday</td>
+			<td class="descrip"> Las funciones gettimeofday puede obtener la hora, así como una zona horaria.</td>
+			<td class="prototipo">int gettimeofday(struct timeval *restrict tv,struct timezone *restrict tz);</td>
+			<td class="libreria">sys/time.h</td>
+		</tr>
+
+		<tr>
+			<td class="nombre">pthread_create</td>
+			<td class="descrip">int pthread_create(pthread_t *restrict thread, const pthread_attr_t *restrict attr, void *(* start_routine )(void *), void *restrict arg );</td>
+			<td class="prototipo">Inicia un nuevo hilo, comienza invocando la ejecucion(start_routine)</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">pthread_detach</td>
+			<td class="descrip">La función pthread_detach () marca el subproceso identificado por subproceso como desconectado. Cuando un subproceso desconectado termina, su
+			   los recursos se liberan automáticamente al sistema sin la necesidad de que otro subproceso se una al subproceso terminado.</td>
+			<td class="prototipo">int pthread_detach(pthread_t thread);</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">pthread_join</td>
+			<td class="descrip">La función pthread_join () espera a que finalice el subproceso especificado Si ese subproceso ya terminó, pthread_join () regresa inmediatamente.</td>
+			<td class="prototipo">int pthread_join(pthread_t thread, void **retval);</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">pthread_mutex_init</td>
+			<td class="descrip">La función pthread_mutex_init() inicializa la exclusión mutua a la que hace referencia mutex con atributos especificados por attr . Si attr es NULL, se utilizan los atributos mutex predeterminados; el efecto es el mismo que pasar la dirección de un objeto de atributos mutex predeterminado. Tras una inicialización exitosa, el estado del mutex se inicializa y desbloquea</td>
+			<td class="prototipo">int pthread_mutex_init(pthread_mutex_t *restrict mutex, const pthread_mutexattr_t *restrict attr);</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+		<tr>
+			<td class="nombre">pthread_mutex_destroy</td>
+			<td class="descrip">La función pthread_mutex_destroy() destruye el objeto mutex al que hace referencia mutex ; el objeto mutex queda, en efecto, sin inicializar. Una implementación puede hacer que pthread_mutex_destroy() establezca el objeto al que hace referencia mutex en un valor no válido. Un objeto mutex destruido se puede reinicializar usando pthread_mutex_init() ; los resultados de hacer referencia al objeto después de que se haya destruido no están definidos.</td>
+			<td class="prototipo">int pthread_mutex_destroy(pthread_mutex_t *mutex); pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;</td>
+			<td class="libreria">pthread.h</td>
+		</tr>
+	</table>
+</body>
+</html>

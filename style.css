@@ -1,0 +1,28 @@
+table 
+{
+	width: 100%;
+	border: 1px solid black;
+}
+
+.nombre
+{
+	width: 5%;
+	border: 1px solid black;
+}
+.descrip
+{
+	width: 40%;
+	border: 1px solid black;
+}
+.libreria
+{
+	text-align: center;
+	width: 5%;
+	border: 1px solid black;
+}
+.prototipo
+{
+	color: blue;
+	width: 20%;
+	border: 1px solid black;
+}
