@@ -1,0 +1,6 @@
+philo.dSYM
+philo
+style.css
+notas.html
+*.o
+.DS_Store

@@ -9,7 +9,10 @@ typedef struct s_arg	t_arg;
 
 typedef struct s_philos
 {
-	int	philo_id;
+	int			philo_id;
+	int			fork;
+	int			count_philo;
+	pthread_t	thread;
 
 }	t_philos;
 
@@ -20,7 +23,7 @@ typedef struct s_arg
 	int			time_eat;
 	int			time_sleep;
 	int			count_eat;
-	t_philos	*next;
+	t_philos	*philo;
 }	t_arg;
 
 /* src/parse_philo.c */

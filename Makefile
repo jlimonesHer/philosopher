@@ -6,12 +6,13 @@
 #    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/03/14 17:00:55 by jlimones         ###   ########.fr        #
+#    Updated: 2023/05/11 16:32:02 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = gcc
+INCLUDE = -pthread
 FLAGS = -Wall -Werror -Wextra
 SRC = 	src/main.c \
 	 	src/parse_args.c \
@@ -19,7 +20,7 @@ SRC = 	src/main.c \
 	 	src/parse_utils2.c \
 
 AUTHOR = jlimones
-DATE = 11/03/2023
+DATE = 11/05/2023
 
 COM_COLOR   = \033[0;34m
 OBJ_COLOR   = \033[0;36m
@@ -53,11 +54,11 @@ endif
 	@printf "%b" "$(OBJ_COLOR)Flags: 	$(WARN_COLOR)$(FLAGS)\n\033[m"
 
 $(NAME): $(SRC) $(OBJ)
-	@gcc -o $(NAME) $(FLAGS) $(SRC)
+	@$(CC) -g3 $(INCLUDE) -o $(NAME) $(FLAGS) $(SRC) 
 	@printf "%b" "$(OK_COLOR)" "philosopher compilado\n"
 
 %.o: %.c $(HEAD)
-	@gcc $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@ 
 
 skiperror:
 	@$(CC) -o $(NAME) $(SRC)
