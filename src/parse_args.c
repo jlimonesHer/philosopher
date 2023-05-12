@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:32:16 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/11 18:30:53 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/12 18:08:46 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 static void	fill_philos(t_arg *args_philo)
 {
 	int			i;
+	t_philos	*philos;
 
-	i = 0;
-	args_philo->philo = malloc(sizeof(t_philos) * args_philo->num_philos);
-	while (args_philo->num_philos > i++)
+	i = -1;
+	philos = malloc(sizeof(t_philos) * args_philo->num_philos);
+	while (args_philo->num_philos > ++i)
 	{
-		args_philo->philo[i].philo_id = i;
-		args_philo->philo[i].fork = 1;
-		args_philo->philo[i].count_philo = 1;
+		philos->args = args_philo;
+		philos[i].philo_id = i + 1;
+		philos[i].fork = 1;
+		philos[i].count_philo = 1;
+		philos[i].count_eat = args_philo->count_eat;
 	}
+	args_philo->philo = philos;
 }
 
 int	parse_args(int argc, char **argv, t_arg *args_philo)
@@ -33,8 +37,9 @@ int	parse_args(int argc, char **argv, t_arg *args_philo)
 	args_philo->time_eat = cmp_atoi(argv[3]);
 	args_philo->time_sleep = cmp_atoi(argv[4]);
 	args_philo->count_eat = -1;
-	if (args_philo->num_philos < 1 || args_philo->time_die < 1 ||
-		args_philo->time_eat < 1
+	pthread_mutex_init(&(args_philo->mute_eat), NULL);
+	if (args_philo->num_philos < 1 || args_philo->time_die < 1
+		|| args_philo->time_eat < 1
 		|| args_philo->time_sleep < 1)
 		return (1);
 	if (argc == 6)

@@ -6,7 +6,7 @@
 #    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/05/11 16:32:02 by jlimones         ###   ########.fr        #
+#    Updated: 2023/05/12 14:57:00 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ SRC = 	src/main.c \
 	 	src/parse_args.c \
 	 	src/parse_utils.c \
 	 	src/parse_utils2.c \
+	 	src/created_th.c \
+	 	src/routines.c \
+	 	src/utils_routines.c \
 
 AUTHOR = jlimones
 DATE = 11/05/2023
