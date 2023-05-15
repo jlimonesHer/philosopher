@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   created_th.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:48:53 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/12 18:13:35 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/13 08:16:14 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	created_thread(t_arg *args)
 {
 	int			i;
-	//pthread_t	watch;
+	pthread_t	watch;
 
 	i = -1;
 	args->thread = malloc(sizeof(pthread_t) * args->num_philos);
@@ -26,10 +26,10 @@ int	created_thread(t_arg *args)
 		if (pthread_create(&args->thread[i], NULL,
 				thread_routine, &args->philo[i]))
 			return (1);
-        pthread_join(args->thread[i], NULL);
+       // pthread_join(args->thread[i], NULL);
 	}
-	// if (pthread_create(&watch, NULL, routine, NULL))
-	// 	return (1);
-	// pthread_join(watch, NULL);
+	if (pthread_create(&watch, NULL, routine, NULL))
+		return (1);
+	pthread_join(watch, NULL);
 	return (0);
 }

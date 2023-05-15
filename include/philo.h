@@ -11,9 +11,12 @@ typedef struct s_arg	t_arg;
 typedef struct s_philos
 {
 	int					philo_id;
-	int					fork;
-	int					count_philo;
+	pthread_mutex_t		eat;
+	pthread_mutex_t		*fork;
+	pthread_mutex_t		fork_left;
+	int					terminate;
 	int					count_eat;
+	time_t				last_meal;
 	t_arg				*args;
 }	t_philos;
 
@@ -24,9 +27,12 @@ typedef struct s_arg
 	int					time_eat;
 	int					time_sleep;
 	int					count_eat;
+	int					end;
+	time_t				start;
 	t_philos			*philo;
 	pthread_t			*thread;
-	pthread_mutex_t		mute_eat;
+	pthread_mutex_t		mute_lock;
+	pthread_mutex_t		mute_end_lock;
 }	t_arg;
 
 /* src/parse_philo.c */
@@ -49,4 +55,10 @@ int		created_thread(t_arg *args);
 /*routines.c*/
 void *thread_routine(void *arg);
 void *routine(void *arg);
+
+/*checker.c*/
+
+
+/*utils_routines.c*/
+time_t		get_time(void);
 #endif

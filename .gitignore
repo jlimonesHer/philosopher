@@ -4,3 +4,4 @@ style.css
 notas.html
 *.o
 .DS_Store
+.vscode
