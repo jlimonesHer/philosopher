@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:48:53 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/13 08:16:14 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/15 06:27:23 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	created_thread(t_arg *args)
 			return (1);
        // pthread_join(args->thread[i], NULL);
 	}
-	if (pthread_create(&watch, NULL, routine, NULL))
+	if (pthread_create(&watch, NULL, routine_check, (void *)args))
 		return (1);
 	pthread_join(watch, NULL);
 	return (0);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
+#    By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/05/12 14:57:00 by jlimones         ###   ########.fr        #
+#    Updated: 2023/05/15 06:14:16 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC = 	src/main.c \
 	 	src/created_th.c \
 	 	src/routines.c \
 	 	src/utils_routines.c \
+	 	src/checker.c \
+	 	src/actions.c \
 
 AUTHOR = jlimones
 DATE = 11/05/2023

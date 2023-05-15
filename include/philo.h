@@ -6,6 +6,12 @@
 # include <unistd.h>
 # include <sys/time.h>
 
+# define SLEEP "is sleeping\n"
+# define THINK "is thinking\n"
+# define EAT "is eating\n"
+# define FORK "has taken a fork\n"
+# define DEAD "died\n"
+
 typedef struct s_arg	t_arg;
 
 typedef struct s_philos
@@ -36,29 +42,39 @@ typedef struct s_arg
 }	t_arg;
 
 /* src/parse_philo.c */
-int		parse_args(int argc, char **argv, t_arg *args);
-void	help_argv_validate(void);
+int			parse_args(int argc, char **argv, t_arg *args);
+void		help_argv_validate(void);
 
 /* src/parse_utils.c */
-char	*ft_strdup(const char *s);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_atoi(char *array);
-int		cmp_atoi(char *atoi_nbr);
+char		*ft_strdup(const char *s);
+size_t		ft_strlen(const char *s);
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_atoi(char *array);
+int			cmp_atoi(char *atoi_nbr);
 
 /* src/parse_utils2.c */
-char	*ft_itoa(int n);
+char		*ft_itoa(int n);
 
 /*created_th.c*/
-int		created_thread(t_arg *args);
+int			created_thread(t_arg *args);
 
 /*routines.c*/
-void *thread_routine(void *arg);
-void *routine(void *arg);
+void 		*thread_routine(void *arg);
 
 /*checker.c*/
+int			checker_finish(t_arg *args);
+int			check_eat(t_arg *args);
+void		*routine_check(void *arg);
+int			check_dead(t_philos *philo);
 
+/*actions.c*/
+void		ft_sleep(t_philos *philo);
+void		ft_think(t_philos *philo);
+void		ft_eat(t_philos *philo);
+void		ft_take_forks(t_philos *philo);
 
 /*utils_routines.c*/
 time_t		get_time(void);
+void		is_sleep(time_t tm, t_arg *args);
+void		print_action(t_philos *philo, char *action);
 #endif
