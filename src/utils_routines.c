@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:55:42 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 09:48:58 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:25:57 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	is_sleep(time_t tm, t_arg *args)
 
 	start = get_time();
 	while (get_time() - start < tm && !checker_finish(args))
-		usleep(100);
+		usleep(1000);
 }
 
 void	print_action(t_philos *philo, char *action)

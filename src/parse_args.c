@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:32:16 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 09:53:23 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:20:18 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static void	fill_philos(t_arg *args_philo)
 	}
 	pthread_mutex_init(&args_philo->mute_end_lock, 0);
 	pthread_mutex_init(&args_philo->mute_lock, 0);
-	args_philo->philo = philos;
 	args_philo->start = get_time();
 	args_philo->end = 0;
 	args_philo->philo = philos;

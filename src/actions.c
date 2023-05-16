@@ -6,13 +6,13 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 05:23:14 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 11:01:43 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:26:30 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void ft_sleep(t_philos *philo)
+void	ft_sleep(t_philos *philo)
 {
 	if (philo->args->num_philos == 1)
 		return ;
@@ -29,8 +29,8 @@ void	ft_eat(t_philos *philo)
 {
 	if (philo->args->num_philos == 1)
 		return ;
-	pthread_mutex_lock(&philo->eat);
 	print_action(philo, EAT);
+	pthread_mutex_lock(&philo->eat);
 	philo->count_eat++;
 	philo->last_meal = get_time();
 	pthread_mutex_unlock(&philo->eat);
