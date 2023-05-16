@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:51:21 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 09:37:40 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:08:31 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int argc, char **argv)
 
 	validate_args(argc, argv, &args);
 	created_thread(&args);
-	//system("leaks philo");
+	// free_philo(&args);
+	// mutex_exit(&args);
+	// end_threads(&args);
 	return (0);
 }

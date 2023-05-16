@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 05:23:14 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 09:43:50 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:01:43 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_eat(t_philos *philo)
 {
 	if (philo->args->num_philos == 1)
 		return ;
-		pthread_mutex_lock(&philo->eat);
+	pthread_mutex_lock(&philo->eat);
 	print_action(philo, EAT);
 	philo->count_eat++;
 	philo->last_meal = get_time();
@@ -47,7 +47,7 @@ void	ft_take_forks(t_philos *philo)
 	if (philo->args->num_philos == 1)
 	{
 		pthread_mutex_lock(&philo->args->mute_end_lock);
-		usleep(philo->args->time_die * 1000);
+		is_sleep(philo->args->time_die, philo->args);
 		philo->args->end = 1;
 		pthread_mutex_unlock(&philo->args->mute_end_lock);
 		pthread_mutex_unlock(&philo->fork_left);

@@ -41,7 +41,7 @@ typedef struct s_arg
 	pthread_mutex_t		mute_end_lock;
 }	t_arg;
 
-/* src/parse_philo.c */
+/* src/parse_args.c */
 int			parse_args(int argc, char **argv, t_arg *args);
 void		help_argv_validate(void);
 
@@ -59,7 +59,7 @@ char		*ft_itoa(int n);
 int			created_thread(t_arg *args);
 
 /*routines.c*/
-void 		*thread_routine(void *arg);
+void		*thread_routine(void *arg);
 
 /*checker.c*/
 int			checker_finish(t_arg *args);
@@ -77,4 +77,9 @@ void		ft_take_forks(t_philos *philo);
 time_t		get_time(void);
 void		is_sleep(time_t tm, t_arg *args);
 void		print_action(t_philos *philo, char *action);
+
+/*exit.c*/
+void		mutex_exit(t_arg *args);
+void		end_threads(t_arg *args);
+void		free_philo(t_arg *args);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_routines.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 14:55:42 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/15 06:13:47 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:48:58 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ time_t	get_time(void)
 	return (1000 * n_time.tv_sec + n_time.tv_usec / 1000);
 }
 
-void is_sleep(time_t tm, t_arg *args)
+void	is_sleep(time_t tm, t_arg *args)
 {
 	time_t	start;
 
 	start = get_time();
 	while (get_time() - start < tm && !checker_finish(args))
-		usleep(1000);
+		usleep(100);
 }
 
 void	print_action(t_philos *philo, char *action)

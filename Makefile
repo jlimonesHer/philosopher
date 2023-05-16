@@ -6,13 +6,13 @@
 #    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/05/16 09:40:53 by jlimones         ###   ########.fr        #
+#    Updated: 2023/05/16 10:15:43 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = gcc
-INCLUDE = -pthread -
+INCLUDE = -pthread -fsanitize=thread
 FLAGS = -Wall -Werror -Wextra
 SRC = 	src/main.c \
 	 	src/parse_args.c \
@@ -23,6 +23,7 @@ SRC = 	src/main.c \
 	 	src/utils_routines.c \
 	 	src/checker.c \
 	 	src/actions.c \
+	 	src/exit_free.c 
 
 AUTHOR = jlimones
 DATE = 11/05/2023
