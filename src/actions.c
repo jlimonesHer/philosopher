@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 05:23:14 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 11:26:30 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 12:05:29 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_sleep(t_philos *philo)
 	is_sleep(philo->args->time_sleep, philo->args);
 }
 
-void ft_think(t_philos *philo)
+void	ft_think(t_philos *philo)
 {
 	print_action(philo, THINK);
 }
@@ -47,7 +47,7 @@ void	ft_take_forks(t_philos *philo)
 	if (philo->args->num_philos == 1)
 	{
 		pthread_mutex_lock(&philo->args->mute_end_lock);
-		is_sleep(philo->args->time_die, philo->args);
+		usleep(philo->args->time_die * 1000);
 		philo->args->end = 1;
 		pthread_mutex_unlock(&philo->args->mute_end_lock);
 		pthread_mutex_unlock(&philo->fork_left);

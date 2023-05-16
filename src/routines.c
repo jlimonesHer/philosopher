@@ -6,13 +6,13 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:50:46 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 11:24:37 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:59:13 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-void *thread_routine(void *arg)
+void	*thread_routine(void *arg)
 {
 	t_philos	*philos;
 
@@ -26,7 +26,6 @@ void *thread_routine(void *arg)
 			ft_take_forks(philos);
 			ft_eat(philos);
 		}
-		
 	}
 	else
 	{

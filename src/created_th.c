@@ -6,7 +6,7 @@
 /*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 12:48:53 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/16 11:24:22 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:58:24 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int	created_thread(t_arg *args)
 		if (pthread_create(&args->thread[i], NULL,
 				thread_routine, &args->philo[i]))
 			return (1);
-       // pthread_join(args->thread[i], NULL);
 	}
 	if (pthread_create(&watch, NULL, routine_check, (void *)args))
 		return (1);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 07:44:56 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/15 06:30:13 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 11:57:31 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-int check_eat(t_arg *args)
+int	check_eat(t_arg *args)
 {
 	int	i;
 	int	status;
@@ -37,7 +37,7 @@ int check_eat(t_arg *args)
 	return (status);
 }
 
-void *routine_check(void *arg)
+void	*routine_check(void *arg)
 {
 	t_arg	*args;
 	int		i;
