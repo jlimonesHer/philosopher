@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+         #
+#    By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 09:17:57 by jlimones          #+#    #+#              #
-#    Updated: 2023/05/15 06:14:16 by jlimones         ###   ########.fr        #
+#    Updated: 2023/05/16 09:40:53 by jlimones         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 CC = gcc
-INCLUDE = -pthread
+INCLUDE = -pthread -
 FLAGS = -Wall -Werror -Wextra
 SRC = 	src/main.c \
 	 	src/parse_args.c \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 05:23:14 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/15 06:04:55 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:43:50 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void ft_sleep(t_philos *philo)
 	if (philo->args->num_philos == 1)
 		return ;
 	print_action(philo, SLEEP);
+	is_sleep(philo->args->time_sleep, philo->args);
 }
 
 void ft_think(t_philos *philo)

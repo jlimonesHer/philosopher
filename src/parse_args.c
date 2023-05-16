@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlimones <jlimones@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: jlimones <jlimones@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:32:16 by jlimones          #+#    #+#             */
-/*   Updated: 2023/05/15 05:03:14 by jlimones         ###   ########.fr       */
+/*   Updated: 2023/05/16 09:37:04 by jlimones         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	fill_philos(t_arg *args_philo)
 		philos[i].fork = &philos[(i + 1) % args_philo->num_philos].fork_left;
 		pthread_mutex_init(&philos[i].fork_left, 0);
 		pthread_mutex_init(&philos[i].eat, 0);
-		philos->last_meal = get_time();
+		philos[i].last_meal = get_time();
 		philos[i].args = args_philo;
 	}
 	args_philo->philo = philos;
